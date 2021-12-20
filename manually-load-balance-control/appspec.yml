@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+- source: <deploy target directory or file>
+  destination: /home/destination
+permissions:
+- object: /home/destination/<deploy target directory or file>
+  owner: OWNER
+  group: GROUP
+  mode: "755"
+hooks:
+  BeforeInstall:
+  - location: BeforeInstall.sh
+  ApplicationStart:
+  - location: ApplicationStart.sh
+  ValidateService:
+  - location: ValidateService.sh
