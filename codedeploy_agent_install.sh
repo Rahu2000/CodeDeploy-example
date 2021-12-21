@@ -32,7 +32,7 @@ wget https://aws-codedeploy-${REGION}.s3.${REGION}.amazonaws.com/latest/install
 chmod +x ./install
 sudo ./install auto
 
-## configuration change
+## CodeDeploy agent configuration change examples
 sudo sed -i "s/:max_revisions: 5/:max_revisions: ${REVISIONS}/g" /etc/codedeploy-agent/conf/codedeployagent.yml
 
 if [[ "true" == ${ENABLE_PRIVATE_ENDPOINT} ]]; then
